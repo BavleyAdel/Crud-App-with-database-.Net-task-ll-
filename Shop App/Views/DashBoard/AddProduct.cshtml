@@ -1,0 +1,65 @@
+﻿@model Product
+@{
+    Layout = "_DashBoard";
+}
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-tachometer-fast-alt"></i>
+        <span class="text">Adding Product</span>
+    </div>
+
+    <div>
+        <form method="post" asp-action="AddProduct" class="row">
+            <div class="mb-3">
+                <label for="" class="form-label" asp-for="Name">Product Name</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="" asp-for="Name"/>
+
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label" asp-for="Description">Product Description</label>
+                <textarea type="text"
+                          class="form-control"
+                          placeholder="" asp-for="Description">
+                    </textarea>
+            </div>
+
+            <div class="mb-3 col-lg-6">
+                <label for="" class="form-label" asp-for="Price">Product Price</label>
+                <input type="number" class="form-control" placeholder="" asp-for="Price"></input>
+            </div>
+
+            <div class="mb-3 col-lg-6">
+                <label for="" class="form-label" asp-for="Quantity">Product Quantity</label>
+                <input type="number" class="form-control" placeholder="" asp-for="Quantity"></input>
+            </div>
+
+
+            
+            <div class="mb-3 col-lg-12 d-flex align-items-center mt-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="EnableSize" />
+                    <label class="form-check-label" asp-for="EnableSize"> Enable Product Size </label>
+                </div> 
+            </div>
+
+
+            <div class="mb-3 col-lg-6">
+                <label for="" class="form-label" asp-for="CompanyId">Company</label>
+                <select class="form-select "
+                        asp-for="CompanyId">
+                    <option selected>Select one</option>
+                    <option value="1">Nike</option>
+                    <option value="2">Addidas</option>
+                </select>
+            </div>
+
+            <div class="col-lg-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
