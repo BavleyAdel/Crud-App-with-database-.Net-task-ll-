@@ -17,8 +17,8 @@ namespace Shop_App.Controllers
         {
             _company.Add(new Company { Id = 1, Name = "Nike" });
             _company.Add(new Company { Id = 2, Name = "Addidas" });
-            _category.Add(new Category { Id = 1, Name = "Sports" });
-            _category.Add(new Category { Id = 2, Name = "Life Style" });
+            //_category.Add(new Category { Id = 1, Name = "Sports" });
+            //_category.Add(new Category { Id = 2, Name = "Life Style" });
             _db = db;
         }
 
@@ -54,6 +54,10 @@ namespace Shop_App.Controllers
         public IActionResult ViewAllProducts()
         {
             var products = _db.products.Include(p => p.Company).ToList();
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(products);
+            //}
             return View(products);
         }
 
@@ -79,7 +83,7 @@ namespace Shop_App.Controllers
         public IActionResult EditProduct(Product product)
         {
             //Product prd = _Products.FirstOrDefault(x => x.Id == product.Id);
-            Product prd = _db.products.FirstOrDefault(x => x.Id == product.Id);
+            Product? prd = _db.products.FirstOrDefault(x => x.Id == product.Id);
 
             //prd.Name = product.Name;
             //prd.Description = product.Description;

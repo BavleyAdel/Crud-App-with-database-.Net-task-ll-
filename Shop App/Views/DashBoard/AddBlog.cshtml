@@ -16,6 +16,8 @@
                 <input type="text"
                        class="form-control"
                        placeholder="" asp-for="Title"/>
+                <span class="text-danger" asp-validation-for="Title"></span>
+
 
             </div>
             <div class="mb-3">
@@ -23,6 +25,8 @@
                 <textarea type="text"
                           class="form-control"
                           placeholder="" asp-for="Description"></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
+
             </div>
 
             <div class="mb-3 col-lg-6">
@@ -30,6 +34,8 @@
                 <input type="date"
                        class="form-control"
                        placeholder="" asp-for="Date"></input>
+                <span class="text-danger" asp-validation-for="Date"></span>
+
             </div>
 
 @* 
@@ -46,6 +52,8 @@
                 <label class="form-label" asp-for="CategoryId">Category</label>
                 <select class="form-select"
                         asp-for="CategoryId">
+                    <span class="text-danger" asp-validation-for="CategoryId"></span>
+
                     <option selected>Select one</option>
                     <option value="1">Sports</option>
                     <option value="2">Life Style</option>
