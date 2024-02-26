@@ -18,7 +18,7 @@ namespace Shop_App.Models
         public string Description { get; set; }
 
         [Required]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
 
         public int CategoryId { get; set; }
