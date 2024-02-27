@@ -18,6 +18,7 @@ namespace Shop_App.Models
         public string Description { get; set; }
 
         [Required]
+        [Utilities.CheckDate]
         public DateTime Date { get; set; }
 
 

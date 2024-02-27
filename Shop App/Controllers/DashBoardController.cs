@@ -35,6 +35,10 @@ namespace Shop_App.Controllers
         [HttpPost]
         public IActionResult AddProduct(Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
             //int id;
             //if (_Products.Count == 0)
             //{
@@ -58,6 +62,7 @@ namespace Shop_App.Controllers
             //{
             //    return View(products);
             //}
+
             return View(products);
         }
 
@@ -109,6 +114,10 @@ namespace Shop_App.Controllers
         [HttpPost]
         public IActionResult AddBlog(Blog blog)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(blog);
+            }
             //int id;
             //if(_blogs.Count == 0)
             //{

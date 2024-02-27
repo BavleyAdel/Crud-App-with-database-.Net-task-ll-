@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Shop_App.Models
+namespace Shop_App.Models.Utilities
 {
     public class CheckDateAttribute : ValidationAttribute
     {
@@ -12,9 +12,9 @@ namespace Shop_App.Models
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             Blog blog = (Blog)validationContext.ObjectInstance;
-            if (DateTime.Compare(blog.Date,_todayDate)< 0)
+            if (DateTime.Compare(blog.Date, _todayDate) < 0)
             {
-                return new ValidationResult("Thish Date is not valid!");
+                return new ValidationResult("This Date is not valid!");
             }
             return ValidationResult.Success;
         }

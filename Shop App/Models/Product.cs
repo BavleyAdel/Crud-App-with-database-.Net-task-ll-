@@ -21,7 +21,7 @@ namespace Shop_App.Models
 
         [Required]
         [Range(1,5000 , ErrorMessage ="please enter price from 1 to 5000")]
-        [CheckMaxCompanyPrice(3000)]
+        [Utilities.CheckMaxCompanyPrice(3000)]
         public float Price { get; set; }
 
         [Required]

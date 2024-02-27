@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Shop_App.Models
+namespace Shop_App.Models.Utilities
 {
-    public class CheckMaxCompanyPriceAttribute:ValidationAttribute
+    public class CheckMaxCompanyPriceAttribute : ValidationAttribute
     {
         private readonly int _maxCompanyPrice;
         public CheckMaxCompanyPriceAttribute(int price)
@@ -15,12 +15,12 @@ namespace Shop_App.Models
             Product product = (Product)validationContext.ObjectInstance;
             int price;
 
-            if (!int.TryParse(value.ToString(),out price))
+            if (!int.TryParse(value.ToString(), out price))
             {
                 return new ValidationResult("Invalid Price Value!");
             }
 
-            if(product.CompanyId == 1 && price > _maxCompanyPrice)
+            if (product.CompanyId == 1 && price > _maxCompanyPrice)
             {
                 return new ValidationResult("Price must be less than 3000 for addidas!");
             }
